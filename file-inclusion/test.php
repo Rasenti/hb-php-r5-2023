@@ -1,9 +1,10 @@
-<?php require_once 'layout/header.php'; ?>
+<?php 
+  $title = 'Test';
+  require_once 'layout/header.php'; 
+?>
 
-<h1>TEST PAGE</h1>
-
-<p>
-  <a href="loops.php">Page de boucles</a>
-</p>
-
+    <p>
+      Ceci est une page de test, qui n'a d'utilité que le fait d'exister.
+    </p>
+    
 <?php require_once 'layout/footer.php';
