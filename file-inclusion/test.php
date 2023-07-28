@@ -3,7 +3,7 @@
   require_once 'layout/header.php'; 
 ?>
 
-    <p>
+    <p class ="text-light">
       Ceci est une page de test, qui n'a d'utilité que le fait d'exister.
     </p>
     
