@@ -1,14 +1,28 @@
 <?php
 require_once 'data/products.php';
 require_once 'layout/header.php';
-require_once 'layout/footer.php';
 ?>
 
-<h1>Recherche</h1>
-<form method="GET" class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+<h1>RECHERCHE</h1>
+
+<?php var_dump($_GET); ?>
+
+<form>
+  <input type="text" placeholder="Recherche..." name="search" />
+  <button type="submit">
+    Rechercher
+  </button>
 </form>
 
+<!-- RÉSULTATS -->
 <?php
-var_dump($_GET);
+if (isset($_GET['search'])) {
+  ['search' => $search] = $_GET;
+
+  $results = array_filter($products, fn ($el) => str_contains($el['name'], $search));
+
+  var_dump($results);
+}
+?>
+
+<?php require_once 'layout/footer.php';
